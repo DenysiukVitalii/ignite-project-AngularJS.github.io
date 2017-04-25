@@ -22,6 +22,12 @@
 * {
   font-family: RalewayLight; }
 
+body {
+  margin-top: 100px; }
+  @media only screen and (max-width: 768px) {
+    body {
+      margin-top: 100px; } }
+
 /*     --- HEADER ---     */
 header {
   position: fixed;
@@ -32,7 +38,7 @@ header {
   z-index: 100; }
   @media only screen and (max-width: 768px) {
     header {
-      height: 70px; } }
+      height: 100px; } }
 
 @media only screen and (min-width: 768px) {
   #menu {
@@ -126,17 +132,67 @@ header {
       #menu-list li {
         padding: 10px 0;
         border-bottom: 1px solid #fff;
-        background-color: #393f49; } }
+        background-color: #131316; } }
 
 /*     ------     */
-section {
-  height: calc(100vh - 100px);
-  background-color: #F7F7F7; }
-
 #home {
-  height: 0; }
+  display: block;
+  position: relative;
+  height: calc(100vh - 100px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../img/Layer-1.png);
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; }
+  #home .welcome {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -70%);
+    -moz-transform: translate(-50%, -70%);
+    -ms-transform: translate(-50%, -70%);
+    transform: translate(-50%, -70%); }
+    #home .welcome h1 {
+      font-family: RalewayExtraLight;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 45px;
+      margin: 30px 0; }
+    #home .welcome a {
+      color: #fff;
+      font-size: 16px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 1px solid #fff;
+      display: block;
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      transition: 0.3s; }
+      #home .welcome a:hover {
+        color: #000 !important; }
+      @media only screen and (max-width: 768px) {
+        #home .welcome a {
+          width: 140px; } }
+      #home .welcome a:hover {
+        background-color: #fff; }
 
-body {
-  margin-top: 100px; }
+.border-active {
+  border-bottom: 2px solid #7FF0FF; }
+
+.sec {
+  height: 100vh;
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
