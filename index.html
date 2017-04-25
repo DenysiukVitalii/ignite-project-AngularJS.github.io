@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="KETapp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>KET Theme</title>
+  <link href="static/style/libs/bootstrap.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="static/style/font-awesome.min.css">
+  <link rel="stylesheet" href="static/style/css/style.css">
+</head>
+<body>
+  <header ng-controller="headerCtrl">
+    <div class="container">
+      <img src="static/img/Logo.png" id="logo" alt="">
+      <div id="menu">
+        <a id="icon-menu" ng-click="showMenu()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <ul id="menu-list">
+          <li ng-repeat="item in itemsMenu">
+              <a href="#" class="menu-link" scroll-to="{{item}}" offset="100" ng-click="removeActive(item)">{{item}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <section id="home"></section>
+  <section id="services">services</section>
+  <section id="portfolio">portfolio</section>
+  <section id="about">about</section>
+  <section id="news">news</section>
+  <section id="contact">contact</section>
+
+
+  <script src="static/js/angular.js"></script>
+  <script src="static/js/angular_route.js"></script>
+  <script src="static/js/angular-smooth-scroll.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+</html>
