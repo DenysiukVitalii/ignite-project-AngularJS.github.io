@@ -163,3 +163,115 @@ header {
   height: 100vh;
   width: 100%;
 }
+
+
+/* ----- About us ----- */
+#about {
+  padding: 60px 0;
+  h1 {
+    font-family: RalewayRegular;
+    margin: 0;
+  }
+  img.divider {
+    margin: 25px 0;
+  }
+  p.description {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 90px;
+  }
+  .picture-description {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    div {
+      background-color: rgba(0,0,0,0.5);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      @include centerHorizontal();
+      width: 100%;
+      .worker-name {
+        font-family: RalewayMedium;
+        color: $blue;
+        font-size: 20px;
+        margin: 0;
+        margin-top: 3px;
+      }
+      .worker-position {
+        color: #fff;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .worker-description {
+    background-color: $greylight;
+    padding: 25px 25px;
+    p {
+      color: $greytext;
+      font-size: 13px;
+      margin: 0;
+    }
+    @include border(bb, 1px, #fff);
+  }
+
+  .icons {
+    div {
+      width: 25%;
+      height: 55px;
+      padding: 0;
+      background-color: $greylight;
+      @include border(br, 1px, #fff);
+      transition: 0.3s;
+      &:last-child {
+        border: 0;
+      }
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 4.2;
+        color: $blacklink;
+        transition: 0.3s;
+        i {
+          font-size: 22px;
+        }
+      }
+    }
+    .facebook{
+      &:hover {
+        background-color: $facebook;
+        a {
+          color: #fff;
+        }
+      }
+    }
+    .twitter{
+      &:hover {
+        background-color: $twitter;
+        a {
+          color: #fff;
+        }
+      }
+    }
+    .google{
+      &:hover {
+        background-color: $google;
+        a {
+          color: #fff;
+        }
+      }
+    }
+    .dribbble{
+      &:hover {
+        background-color: $dribbble;
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+  }
+}

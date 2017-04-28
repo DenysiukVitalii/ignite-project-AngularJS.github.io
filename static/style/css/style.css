@@ -196,4 +196,85 @@ header {
   height: 100vh;
   width: 100%; }
 
+/* ----- About us ----- */
+#about {
+  padding: 60px 0; }
+  #about h1 {
+    font-family: RalewayRegular;
+    margin: 0; }
+  #about img.divider {
+    margin: 25px 0; }
+  #about p.description {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 90px; }
+  #about .picture-description {
+    position: relative; }
+    #about .picture-description img {
+      width: 100%; }
+    #about .picture-description div {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      width: 100%; }
+      #about .picture-description div .worker-name {
+        font-family: RalewayMedium;
+        color: #7FF0FF;
+        font-size: 20px;
+        margin: 0;
+        margin-top: 3px; }
+      #about .picture-description div .worker-position {
+        color: #fff;
+        font-size: 13px; }
+  #about .worker-description {
+    background-color: #F7F7F7;
+    padding: 25px 25px;
+    border-bottom: 1px solid #fff; }
+    #about .worker-description p {
+      color: #929ba0;
+      font-size: 13px;
+      margin: 0; }
+  #about .icons div {
+    width: 25%;
+    height: 55px;
+    padding: 0;
+    background-color: #F7F7F7;
+    border-right: 1px solid #fff;
+    transition: 0.3s; }
+    #about .icons div:last-child {
+      border: 0; }
+    #about .icons div a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      line-height: 4.2;
+      color: #444444;
+      transition: 0.3s; }
+      #about .icons div a i {
+        font-size: 22px; }
+  #about .icons .facebook:hover {
+    background-color: #36609E; }
+    #about .icons .facebook:hover a {
+      color: #fff; }
+  #about .icons .twitter:hover {
+    background-color: #2CA9E1; }
+    #about .icons .twitter:hover a {
+      color: #fff; }
+  #about .icons .google:hover {
+    background-color: #DB5442; }
+    #about .icons .google:hover a {
+      color: #fff; }
+  #about .icons .dribbble:hover {
+    background-color: #EE558E; }
+    #about .icons .dribbble:hover a {
+      color: #fff; }
+
 /*# sourceMappingURL=style.css.map */

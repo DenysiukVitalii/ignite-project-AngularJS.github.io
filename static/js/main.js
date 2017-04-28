@@ -1,10 +1,21 @@
 var app = angular.module("KETapp", ['smoothScroll']);
 
 var width = window.innerWidth;
-
+var model = {
+  itemsMenu : ['home', 'services', 'portfolio', 'about', 'news', 'contact'],
+  workers: [{name: "John Doe", position: "Team Lead", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam excepturi.",
+             img: "static/img/worker1.jpg", socialNetworks: [{name: "facebook", link: "https://www.facebook.com/"}, {name: "twitter", link: "https://twitter.com"}, {name: "google", link: "https://plus.google.com/"}, {name: "dribbble", link: "https://dribbble.com/"}]},
+            {name: "Carl Graimes", position: "Back-End Developer", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam excepturi.",
+             img: "static/img/worker2.jpg", socialNetworks: [{name: "facebook", link: "https://www.facebook.com/"}, {name: "twitter", link: "https://twitter.com"}, {name: "google", link: "https://plus.google.com/"}, {name: "dribbble", link: "https://dribbble.com/"}]},
+            {name: "Dayve Johnson", position: "Graphic Designer", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam excepturi.",
+             img: "static/img/worker3.jpg", socialNetworks: [{name: "facebook", link: "https://www.facebook.com/"}, {name: "twitter", link: "https://twitter.com"}, {name: "google", link: "https://plus.google.com/"}, {name: "dribbble", link: "https://dribbble.com/"}]},
+            {name: "Mike Wahlberg", position: "Front-End Developer", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam excepturi.",
+             img: "static/img/worker4.jpg", socialNetworks: [{name: "facebook", link: "https://www.facebook.com/"}, {name: "twitter", link: "https://twitter.com"}, {name: "google", link: "https://plus.google.com/"}, {name: "dribbble", link: "https://dribbble.com/"}]},
+           ],
+};
 
 app.controller('headerCtrl', ['$scope', function ($scope) {
-    $scope.itemsMenu = ['home', 'services', 'portfolio', 'about', 'news', 'contact'];
+    $scope.itemsMenu = model.itemsMenu;
     $scope.isClick = false;
 
     $scope.removeActive = function (link) {
@@ -42,3 +53,16 @@ app.controller('homeCtrl', ['$scope', function ($scope) {
     }
 
 }]);
+
+app.controller('aboutCtrl', ['$scope', function ($scope) {
+  $scope.data = model.workers;
+}])
+.directive('team', function () {
+    return {
+        scope: {
+            workers: "=team"
+        },
+        restrict: "A",
+        templateUrl: 'static/js/templates/team.html'
+    }
+});
