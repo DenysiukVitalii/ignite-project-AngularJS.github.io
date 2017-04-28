@@ -2,20 +2,23 @@ var app = angular.module("KETapp", ['smoothScroll']);
 
 var width = window.innerWidth;
 
+
 app.controller('headerCtrl', ['$scope', function ($scope) {
     $scope.itemsMenu = ['home', 'services', 'portfolio', 'about', 'news', 'contact'];
     $scope.isClick = false;
 
     $scope.removeActive = function (link) {
-      $scope.firstLink = document.querySelector("#menu-list li:first-child a");
+      var firstLink = document.querySelector("#menu-list li:first-child a");
+      var portfolio = document.querySelector("#menu-list li:nth-child(3) a");
       if (width > 768) {
         if (link !== $scope.itemsMenu[0]) {
           if (!$scope.isClick) {
-            $scope.firstLink.classList.add('noborder');
+            firstLink.classList.add('noborder');
             $scope.isClick = true;
           }
         } else {
-          $scope.firstLink.classList.remove('noborder');
+          firstLink.classList.remove('noborder');
+          portfolio.classList.add('noborder');
           $scope.isClick = false;
         }
       }
@@ -24,6 +27,18 @@ app.controller('headerCtrl', ['$scope', function ($scope) {
     $scope.showMenu = function() {
       var mobileMenu = document.querySelector("#menu-list");
       mobileMenu.classList.toggle('show-menu');
+    }
+
+}]);
+
+app.controller('homeCtrl', ['$scope', function ($scope) {
+
+    $scope.activePortfolio = function () {
+      var firstLink = document.querySelector("#menu-list li:first-child a");
+      var portfolio = document.querySelector("#menu-list li:nth-child(3) a");
+      firstLink.classList.add('noborder');
+      portfolio.classList.add('link-active');
+      portfolio.classList.remove('noborder');
     }
 
 }]);

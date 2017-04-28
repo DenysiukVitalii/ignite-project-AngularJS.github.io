@@ -64,10 +64,6 @@ header {
 .show-menu {
   left: 0% !important; }
 
-.noborder {
-  border: none !important;
-  color: #000 !important; }
-
 #logo {
   float: left;
   display: block;
@@ -188,8 +184,13 @@ header {
       #home .welcome a:hover {
         background-color: #fff; }
 
-.border-active {
-  border-bottom: 2px solid #7FF0FF; }
+.link-active {
+  border-bottom: 2px solid #7FF0FF;
+  color: #7FF0FF !important; }
+
+.noborder {
+  border: none !important;
+  color: #000 !important; }
 
 .sec {
   height: 100vh;

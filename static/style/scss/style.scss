@@ -50,10 +50,7 @@ header {
 .show-menu {
   left: 0% !important;
 }
-.noborder {
-  border: none !important;
-  color: #000 !important;
-}
+
 #logo {
    float: left;
    @include centerVertical();
@@ -154,8 +151,13 @@ header {
   }
 }
 
-.border-active {
+.link-active {
   @include border(bb, 2px, $blue);
+  color: $blue !important;
+}
+.noborder {
+  border: none !important;
+  color: #000 !important;
 }
 .sec {
   height: 100vh;
