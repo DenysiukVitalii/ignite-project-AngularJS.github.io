@@ -1,0 +1,17 @@
+<form class="input-group text-center" style="width:0"  novalidate name="form" ng-submit="submitHandler(form.$valid)">
+    <div ng-repeat="item in data" class="col-md-6">
+      <div class="form-group">
+        <input class="input form-control" type="{{item.type}}" placeholder="{{item.placeholder}}" ng-model="newUser[$index]" ng-pattern="{{item.pattern}}" required>
+        <div class="mini-lines"></div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group textarea">
+        <textarea class="form-control" rows="1" placeholder="Your message here" required></textarea>
+        <div class="mini-lines"></div>
+      </div>
+    </div>
+    <div class="col-md-12 text-right">
+      <input class="btn btn-primary" type="submit" ng-disabled="form.$invalid" value="Send message">
+    </div>
+</form>

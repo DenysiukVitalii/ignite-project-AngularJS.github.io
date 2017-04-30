@@ -164,9 +164,7 @@ header {
   width: 100%;
 }
 
-
-/* ----- About us ----- */
-#about {
+.template-section {
   padding: 60px 0;
   h1 {
     font-family: RalewayRegular;
@@ -180,6 +178,10 @@ header {
     margin: 0 auto;
     margin-bottom: 90px;
   }
+}
+
+/* ----- About us ----- */
+#about {
   .picture-description {
     position: relative;
     img {
@@ -205,7 +207,11 @@ header {
       }
     }
   }
-
+  @include media(mobile) {
+    .worker-card {
+      margin-bottom: 90px;
+    }
+  }
   .worker-description {
     background-color: $greylight;
     padding: 25px 25px;
@@ -274,4 +280,57 @@ header {
     }
 
   }
+}
+
+#contact {
+  background-color: $black;
+  color: #fff;
+  form {
+    margin: 0 auto;
+  }
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+  .col-md-6 {
+     margin-bottom: 50px;
+  }
+  .form-group {
+    position: relative;
+    height: 42px;
+  }
+  .form-group.textarea {
+    position: relative;
+    height: 62px;
+  }
+  .btn {
+    margin-top: 30px;
+    @include border(b, 1px, $blue);
+    padding: 10px 30px;
+    border-radius: 0;
+  }
+  input, textarea {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    @include border(bb, 2px, #fff);
+    padding: 20px;
+  }
+  input::-webkit-input-placeholder {color: #fff;}
+  input::-moz-placeholder {color: #fff;}
+  input::-ms-placeholder {color: #fff;}
+
+  textarea::-webkit-input-placeholder {color: #fff;}
+  textarea::-moz-placeholder {color: #fff;}
+  textarea::-ms-placeholder {color: #fff;}
+
+  .mini-lines {
+    width: 100%;
+    height: 9px;
+    bottom: 0;
+    position: absolute;
+    @include border(bl, 2px, #fff);
+    @include border(br, 2px, #fff);
+  }
+
 }

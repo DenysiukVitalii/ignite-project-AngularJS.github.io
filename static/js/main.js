@@ -66,3 +66,27 @@ app.controller('aboutCtrl', ['$scope', function ($scope) {
         templateUrl: 'static/js/templates/team.html'
     }
 });
+
+app.controller('formCtrl', function ($scope) {
+    $scope.items = [
+       { name: "Name", type: "text", placeholder: "Your name here", pattern: "nameRegex" },
+       { name: "Email", type: "email", placeholder: "Your email here", pattern: "mailRegex" }
+      // { name: "Message", type: "text", placeholder: "Your message here", pattern: "messageRegex" }
+    ];
+    $scope.submitHandler = function(isvalid) {
+      (isvalid) ? alert('Form is Valid, sending data!)') : alert('Form is invalid!');
+    }
+    $scope.nameRegex = /^[a-zA-Z]{3,20}$/;
+    $scope.mailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]+$/;
+    $scope.messageRegex = /^.{20,}$/;
+    $scope.newUser = [];
+})
+.directive('form', function () {
+    return {
+        link: function (scope, element, attributes) {
+            scope.data = scope[attributes["form"]];
+        },
+        restrict: "A",
+        templateUrl: 'static/js/templates/form.html'
+    }
+});
