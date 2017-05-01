@@ -177,6 +177,9 @@ header {
     width: 70%;
     margin: 0 auto;
     margin-bottom: 90px;
+    @include media(mobile) {
+      width: 100%;
+    }
   }
 }
 
@@ -285,6 +288,13 @@ header {
 #contact {
   background-color: $black;
   color: #fff;
+  form .ng-valid.ng-dirty {
+      background-color: lightgreen;
+  }
+
+  form .ng-invalid.ng-dirty {
+      background-color: lightcoral;
+  }
   form {
     margin: 0 auto;
   }
@@ -308,6 +318,14 @@ header {
     @include border(b, 1px, $blue);
     padding: 10px 30px;
     border-radius: 0;
+    transition: .3s;
+    &:hover {
+      background-color: $blue;
+      color: $black;
+    }
+    @include media(mobile) {
+      @include translate(-50%, 0);
+    }
   }
   input, textarea {
     background-color: transparent;
@@ -333,4 +351,83 @@ header {
     @include border(br, 2px, #fff);
   }
 
+}
+
+
+footer {
+  #contacts {
+    padding: 80px 0;
+    background-color: $dark;
+    .our-contacts {
+      @include media(nomobile) {
+        width: 30%;
+      }
+      position: relative;
+      width: 100%;
+      background-color: $darkblue;
+      margin: 0 auto;
+      padding: 10px 30px;
+      p {
+        color: #fff;
+        margin-bottom: 15px;
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -19px;
+        border: 10px solid transparent;
+        border-top: 10px solid $darkblue;
+        @include centerHorizontal();
+      }
+    }
+  }
+  .footer-bottom {
+    background-color: $black;
+    color: #fff;
+    padding: 45px 0;
+    p {
+      margin: 0;
+      @include media(mobile) {
+        @include translate(0,-50%);
+      }
+    }
+    a {
+      @include link($blue, $darkblue, 16px, capitalize);
+    }
+    .footer-content {
+      position: relative;
+      .totop {
+        width: 30px;
+        height: 30px;
+        @include centerVertical();
+        left: 35%;
+        border-radius: 50%;
+        cursor: pointer;
+        @include border(b, 1px, #fff);
+        .arrow {
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%,-50%) rotate(45deg);
+          @include border(bt, 1px, #fff);
+          @include border(bl, 1px, #fff);
+        }
+        &:hover {
+          border-color: $blue;
+        }
+        &:hover .arrow{
+          border-color: $blue;
+        }
+        @include media(mobile) {
+
+          @include centerHorizontal();
+          top: 100%;
+        }
+      }
+    }
+
+  }
 }
