@@ -1,0 +1,13 @@
+<article ng-repeat="article in articles" class="text-left">
+	<div class="col-md-2 article-date">
+		<p class="number text-center">{{article.date.day}}</p>
+		<p class="month text-center">{{article.date.month}}</p>
+	</div>
+	<div class="col-md-10 article-content">
+		<div class="short-desc">
+			<p>{{article.post}}</p>
+		</div>
+		<a class="read-more" ng-click="goToNewsById(article.id)">Read More</a>
+    <hr>
+	</div>
+</article>

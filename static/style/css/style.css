@@ -434,4 +434,24 @@ footer .footer-bottom {
           transform: translate(-50%, 0);
           top: 100%; } }
 
+#news article {
+  min-height: 150px; }
+  #news article .article-date {
+    text-align: center; }
+  #news article .number {
+    color: #7FF0FF;
+    font-size: 66px;
+    font-weight: bold; }
+  #news article .article-content .short-desc {
+    margin-top: 40px;
+    margin-bottom: 70px; }
+  #news article .article-content .read-more {
+    color: #7FF0FF;
+    right: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    bottom: 35px;
+    right: 20px;
+    position: absolute; }
+
 /*# sourceMappingURL=style.css.map */

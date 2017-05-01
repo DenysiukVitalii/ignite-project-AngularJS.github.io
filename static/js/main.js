@@ -1,4 +1,4 @@
-var app = angular.module("KETapp", ['smoothScroll']);
+var app = angular.module("KETapp", ['smoothScroll', 'ngRoute']);
 
 var width = window.innerWidth;
 var model = {
@@ -12,6 +12,27 @@ var model = {
             {name: "Mike Wahlberg", position: "Front-End Developer", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam excepturi.",
              img: "static/img/worker4.jpg", socialNetworks: [{name: "facebook", link: "https://www.facebook.com/"}, {name: "twitter", link: "https://twitter.com"}, {name: "google", link: "https://plus.google.com/"}, {name: "dribbble", link: "https://dribbble.com/"}]},
            ],
+  news: [{
+  				id: 1,
+  				date: {day: '25', month: 'September'},
+  				post: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto porro earum perferendis iure commodi, eum aliquam quas numquam similique ipsam dicta quo quibusdam eos! Nisi fuga voluptate explicabo nostrum quam.'
+			   },
+			   {
+			   	id: 2,
+  				date: {day: '15', month: 'June'},
+  				post: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto porro earum perferendis iure commodi, eum aliquam quas numquam similique ipsam dicta quo quibusdam eos! Nisi fuga voluptate explicabo nostrum quam.'
+			   },
+			   {
+			   	id: 3,
+  				date: {day: '07', month: 'April'},
+  				post: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto porro earum perferendis iure commodi, eum aliquam quas numquam similique ipsam dicta quo quibusdam eos! Nisi fuga voluptate explicabo nostrum quam.'
+			   },
+			   {
+			   	id: 4,
+  				date: {day: '04', month: 'May'},
+  				post: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto porro earum perferendis iure commodi, eum aliquam quas numquam similique ipsam dicta quo quibusdam eos! Nisi fuga voluptate explicabo nostrum quam.'
+			   }
+			  ]
 };
 
 app.controller('headerCtrl', ['$scope', function ($scope) {
@@ -92,3 +113,41 @@ app.controller('formCtrl', function ($scope) {
         templateUrl: 'static/js/templates/form.html'
     }
 });
+
+
+
+app.controller('newsCtrl', ['$scope', function ($scope) {
+  $scope.articles = model.news;
+  $scope.goToNewsById = function(id) {
+		$location.path('/' + id);
+	}
+}])
+.directive('news', function () {
+    return {
+        scope: {
+            articles: "=news"
+        },
+        restrict: "A",
+        templateUrl: 'static/js/templates/news.html'
+    }
+});
+
+app.config(function ($routeProvider, $locationProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'static/js/templates/news.html'
+    })
+    .when('/:id', {
+      templateUrl: 'static/js/templates/article.html',
+      controller: 'newsDetailController as detail'
+    })
+    .otherwise({
+      redirectTo: '/'
+    })
+});
+
+app.controller('newsDetailController', ['$scope','$routeParams','$location', function ($scope, $routeParams, $location) {
+	$scope.goToNews = function() {
+		$location.path('/');
+	}
+}]);

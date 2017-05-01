@@ -431,3 +431,37 @@ footer {
 
   }
 }
+
+#news {
+
+    article {
+      min-height: 150px;
+
+      .article-date {
+        text-align: center;
+      }
+        .number {
+          color: $blue;
+          font-size: 66px;
+          font-weight: bold;
+        }
+
+      .article-content {
+
+        .short-desc {
+          margin-top: 40px;
+          margin-bottom: 70px;
+        }
+
+        .read-more {
+          color: $blue;
+          right: 15px;
+          font-weight: bold;
+          cursor: pointer;
+          bottom: 35px;
+          right: 20px;
+          position: absolute;
+        }
+      }
+  }
+}
