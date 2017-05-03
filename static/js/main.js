@@ -32,7 +32,28 @@ var model = {
   				date: {day: '04', month: 'May'},
   				post: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto porro earum perferendis iure commodi, eum aliquam quas numquam similique ipsam dicta quo quibusdam eos! Nisi fuga voluptate explicabo nostrum quam.'
 			   }
-			  ]
+       ],
+  achievements: [{
+            title: 'Completed products',
+            img: 'static/img/Icon4.png',
+            number: 3054
+           },
+           {
+            title: 'Click presed',
+            img: 'static/img/Icon5.png',
+            number: 7234873
+           },
+           {
+            title: 'Mails sented & recived',
+            img: 'static/img/Icon6.png',
+            number: 4670
+           },
+           {
+            title: 'Jokes tolds',
+            img: 'static/img/Icon7.png',
+            number: 939
+           }
+          ]
 };
 
 app.controller('headerCtrl', ['$scope', function ($scope) {
@@ -151,3 +172,16 @@ app.controller('newsDetailController', ['$scope','$routeParams','$location', fun
 		$location.path('/');
 	}
 }]);
+
+app.controller('achievementsCtrl', ['$scope', function ($scope) {
+  $scope.data = model.achievements;
+}])
+.directive('achievements', function () {
+    return {
+        scope: {
+            achievements: "=achievements"
+        },
+        restrict: "A",
+        templateUrl: 'static/js/templates/achievements.html'
+    }
+});

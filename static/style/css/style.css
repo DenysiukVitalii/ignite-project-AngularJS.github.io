@@ -454,4 +454,23 @@ footer .footer-bottom {
     right: 20px;
     position: absolute; }
 
+#achievements {
+  color: #fff;
+  background-color: #131316;
+  padding-top: 70px;
+  padding-bottom: 50px; }
+  #achievements .achievement {
+    text-align: center; }
+    @media only screen and (max-width: 768px) {
+      #achievements .achievement {
+        margin-top: 40px; } }
+    #achievements .achievement img {
+      margin-bottom: 25px;
+      height: 70px; }
+    #achievements .achievement .number {
+      font-size: 40px; }
+    #achievements .achievement .title {
+      text-transform: uppercase;
+      font-size: 12px; }
+
 /*# sourceMappingURL=style.css.map */

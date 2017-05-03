@@ -465,3 +465,32 @@ footer {
       }
   }
 }
+
+#achievements {
+  color: #fff;
+  background-color: $black;
+  padding-top: 70px;
+  padding-bottom: 50px;
+
+  .achievement {
+    text-align: center;
+
+    @include media(mobile) {
+      margin-top: 40px;
+    }
+
+    img {
+      margin-bottom: 25px;
+      height:70px;
+    }
+
+    .number {
+      font-size: 40px;
+    }
+
+    .title {
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+}
