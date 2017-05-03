@@ -1,0 +1,29 @@
+	<div class="container text-center">
+    <h1>Our portfolio</h1>
+    <img src="static/img/Separator.png" class="divider" alt="">
+    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium voluptates minima illo dolorum officiis id voluptate quidem repudiandae dolores aliquam eius perspiciatis, tenetur quaerat debitis vero veniam, libero, delectus velit.</p>
+    <div class="filter-menu">
+			<a class="btn-choose-cat"
+			   ng-repeat="category in portfolio.categories"
+         ng-click="changeCategory(category.title)"
+         ng-class="{'active-btn': selectedItem === category.title}">
+				{{category.title}}
+			</a>
+	    </div>
+	</div>
+    <div id="works" class="row">
+		<div class="work col-lg-2 col-md-3 col-sm-4 col-xs-6"
+		     ng-repeat="work in portfolio.works | category"
+         ng-mouseenter="enterWork(work)"
+         ng-mouseleave="leaveWork(work)"
+         ng-class="{'mouse-over': currentOverWork === work,
+                    'mouse-out': currentOutWork === work}">
+			<img ng-src="{{work.img}}">
+			<div class="work-description">
+			    <div class="wrapper">
+		  			<h3 class="work-title">{{work.title}}</h3>
+		  			<p class="work-category">{{work.category}}</p>
+		  		</div>
+			</div>
+		</div>
+    </div>

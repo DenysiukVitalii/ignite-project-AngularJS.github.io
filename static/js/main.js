@@ -53,7 +53,84 @@ var model = {
             img: 'static/img/Icon7.png',
             number: 939
            }
-          ]
+         ],
+
+      portfolio: {
+        categories: [{
+                      title: 'All'
+                     },
+                     {
+                      title: 'Web Design'
+                     },
+                     {
+                      title: 'Graphic Design'
+                     },
+                     {
+                      title: 'Photography'
+                     },
+                     {
+                      title: 'Illustration'
+                     }],
+        works: [{
+                    category: 'Graphic Design',
+                    title: 'Sample image',
+                    img: 'static/img/work1.jpg'
+                  },
+                  {
+                    category: 'Illustration',
+                    title: 'Sample image',
+                    img: 'static/img/work2.jpg'
+                  },
+                  {
+                    category: 'Web Design',
+                    title: 'Sample image',
+                    img: 'static/img/work3.jpg'
+                  },
+                  {
+                    category: 'Graphic Design',
+                    title: 'Sample image',
+                    img: 'static/img/work1.jpg'
+                  },
+                  { category: 'Photography',
+                    title: 'Sample image',
+                    img: 'static/img/work4.jpg'
+                  },
+                  {
+                    category: 'Web Design',
+                    title: 'Sample image',
+                    img: 'static/img/work3.jpg'
+                  },
+                  {
+                    category: 'Photography',
+                    title: 'Sample image',
+                    img: 'static/img/work4.jpg'
+                  },
+                  {
+                    category: 'Web Design',
+                    title: 'Sample image',
+                    img: 'static/img/work3.jpg'
+                  },
+                  {
+                    category: 'Graphic Design',
+                    title: 'Sample image',
+                    img: 'static/img/work1.jpg'
+                  },
+                  {
+                    category: 'Illustration',
+                    title: 'Sample image',
+                    img: 'static/img/work2.jpg'
+                  },
+                  {
+                    category: 'Photography',
+                    title: 'Sample image',
+                    img: 'static/img/work4.jpg'
+                  },
+                  {
+                    category: 'Illustration',
+                    title: 'Sample image',
+                    img: 'static/img/work2.jpg'
+                  }]
+      }
 };
 
 app.controller('headerCtrl', ['$scope', function ($scope) {
@@ -183,5 +260,45 @@ app.controller('achievementsCtrl', ['$scope', function ($scope) {
         },
         restrict: "A",
         templateUrl: 'static/js/templates/achievements.html'
+    }
+});
+
+var currentCategory = 'All';
+app.controller('portfolioCtrl', ['$scope', function ($scope) {
+  $scope.data = model.portfolio;
+}])
+.filter('category', function() {
+  return function (arr) {
+   return arr.filter(function(work) {
+     return work.category === currentCategory || currentCategory === 'All';
+   });
+ }
+})
+.directive('portfolio', function () {
+    return {
+        scope: {
+            portfolio: "=portfolio"
+        },
+        restrict: "A",
+        templateUrl: 'static/js/templates/portfolio.html',
+        link: function (scope, elem, attrs) {
+          	scope.selectedItem = 'All';
+          	scope.changeCategory = changeCategory;
+          	scope.enterWork = enterWork;
+          	scope.leaveWork = leaveWork;
+
+          	function changeCategory(category) {
+          		currentCategory = category;
+          		scope.selectedItem = category;
+          	};
+
+          	function enterWork(work) {
+          		scope.currentOverWork = work;
+          	}
+
+          	function leaveWork(work) {
+          		scope.currentOutWork = work;
+          	}
+        }
     }
 });
