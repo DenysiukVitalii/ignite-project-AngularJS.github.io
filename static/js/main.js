@@ -130,7 +130,27 @@ var model = {
                     title: 'Sample image',
                     img: 'static/img/work2.jpg'
                   }]
-      }
+      },
+      services: [{
+        title: 'Web Design',
+        img: 'static/img/Icon.png',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eaque magni minus, quo sunt cum temporibus inventore neque modi doloribus dolorum ut quae, quisquam necessitatibus nobis, vitae, impedit maxime accusamus.'
+       },
+       {
+        title: 'Graphic Design',
+        img: 'static/img/Icon1.png',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eaque magni minus, quo sunt cum temporibus inventore neque modi doloribus dolorum ut quae, quisquam necessitatibus nobis, vitae, impedit maxime accusamus.'
+       },
+       {
+        title: 'Programming',
+        img: 'static/img/Icon2.png',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eaque magni minus, quo sunt cum temporibus inventore neque modi doloribus dolorum ut quae, quisquam necessitatibus nobis, vitae, impedit maxime accusamus.'
+       },
+       {
+        title: 'Photography',
+        img: 'static/img/Icon3.png',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eaque magni minus, quo sunt cum temporibus inventore neque modi doloribus dolorum ut quae, quisquam necessitatibus nobis, vitae, impedit maxime accusamus.'
+       }]
 };
 
 app.controller('headerCtrl', ['$scope', function ($scope) {
@@ -299,6 +319,25 @@ app.controller('portfolioCtrl', ['$scope', function ($scope) {
           	function leaveWork(work) {
           		scope.currentOutWork = work;
           	}
+        }
+    }
+});
+
+app.controller('servicesCtrl', ['$scope', function ($scope) {
+  $scope.data = model.services;
+}])
+.directive('services', function () {
+    return {
+        scope: {
+            services: "=services"
+        },
+        restrict: "A",
+        templateUrl: 'static/js/templates/services.html',
+        link: function (scope, elem, attrs) {
+            scope.selectedTab = model.services[0];
+            scope.changeService = function(service) {
+              scope.selectedTab = service;
+            }
         }
     }
 });

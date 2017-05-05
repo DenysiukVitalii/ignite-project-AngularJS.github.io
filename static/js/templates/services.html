@@ -1,0 +1,30 @@
+<div class="container">
+		<div id="services-wrapper">
+			<div id="services-images">
+				<div class="col-sm-3 service"
+				     ng-repeat="service in services"
+				     ng-class="{'active': selectedTab.title === service.title}"
+				     ng-click="changeService(service)">
+					<img ng-src="{{service.img}}">
+					<div class="title">{{service.title}}</div>
+					<div class="square"></div>
+				</div>
+			</div>
+			<div class="col-sm-9 border-bottom"></div>
+			<div id="services-description" class="col-sm-9">
+				<p class="desc">{{selectedTab.title + ' : ' + selectedTab.desc}}</p>
+			</div>
+		</div>
+	</div>
+	<div id="fully-responsive">
+		<div class="container">
+			<div class="col-md-6">
+				<img src="static/img/phones.png" alt="">
+			</div>
+			<div class="col-md-6">
+				<h2>Fully Responsive</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, iure. Repudiandae dicta temporibus sed quibusdam nisi voluptates numquam perspiciatis porro nesciunt, eius, voluptas quo, est dignissimos consequuntur autem atque laboriosam sequi, error quia quasi. Ipsa ea, quibusdam cum eligendi nisi!</p>
+				<a href="">Get now</a>
+			</div>
+		</div>
+	</div>

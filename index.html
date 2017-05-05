@@ -31,7 +31,11 @@
       <a scroll-to="portfolio" offset="100" ng-click="activePortfolio()">start tour</a>
     </div>
   </section>
-  <section class="sec" id="services">services</section>
+
+  <section id="services" ng-controller="servicesCtrl">
+    <div services="data"></div>
+  </section>
+
   <section id="portfolio" class="template-section" ng-controller="portfolioCtrl">
     <div portfolio="data"></div>
   </section>
