@@ -7,7 +7,7 @@
       </a>
       <ul id="menu-list">
         <li ng-repeat="item in myHeader.model.itemsMenu">
-            <a href="#" class="menu-link">{{item}}</a>
+            <a href="#{{item}}" du-smooth-scroll du-scrollspy offset="100" class="menu-link">{{item}}</a>
         </li>
       </ul>
     </div>
@@ -16,6 +16,6 @@
 <section id="home">
    <div class="welcome">
      <h1>we make websites</h1>
-     <a href="#portfolio" du-smooth-scroll du-scrollspy>start tour</a>
+     <a href="#portfolio" du-smooth-scroll du-scrollspy offset="100">start tour</a>
    </div>
  </section>

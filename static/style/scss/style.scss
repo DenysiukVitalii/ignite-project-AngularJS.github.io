@@ -74,12 +74,6 @@ header {
      list-style: none;
      @include media(nomobile) {
        height: 100px;
-       &:first-child {
-         a {
-           @include border(bb, 2px, $blue);
-           color: $blue;
-         }
-       }
      }
      a {
          @include link(#000, $blue, 16px, uppercase);
@@ -288,7 +282,7 @@ header {
 
 
 /*   ---Contact Us---   */
-#contact-us {
+#contact {
   color: #fff;
   background-color: $black;
   padding-bottom: 50px;
@@ -537,7 +531,7 @@ footer {
 
 /*   ---Our News---   */
 
-#our-news {
+#news {
   padding-bottom: 18px;
 
   .news-wrapper {
@@ -745,8 +739,7 @@ footer {
 }
 
 #services {
-  margin-top: 75px;
-
+  padding-bottom: 0;
   #services-wrapper{
 
     #services-images {
@@ -822,7 +815,6 @@ footer {
 
       .desc {
         padding: 10px 15px;
-        margin-bottom: 75px;
       }
     }
   }
