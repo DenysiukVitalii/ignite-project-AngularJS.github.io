@@ -5,33 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>KET Theme</title>
-  <link href="static/style/libs/bootstrap.css" rel="stylesheet"/>
+  <link href="libs/bootstrap.css" rel="stylesheet"/>
   <link rel="stylesheet" href="static/style/font-awesome.min.css">
   <link rel="stylesheet" href="static/style/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="libs/angular_route.js"></script>
+  <script src="libs/angular-smooth-scroll.js"></script>
+
+  <script src="app/app.module.js"></script>
+  <script src="app/header/header.model.js"></script>
+  <script src="app/header/header.module.js"></script>
+  <script src="app/header/header.component.js"></script>
+
+
+  <script src="app/ourservices/ourservices.model.js"></script>
+  <script src="app/ourservices/ourservices.module.js"></script>
+  <script src="app/ourservices/ourservices.component.js"></script>
+
+
+
 </head>
 <body>
-  <header ng-controller="headerCtrl">
-    <div class="container">
-      <img src="static/img/Logo.png" id="logo" alt="">
-      <div id="menu">
-        <a id="icon-menu" ng-click="showMenu()">
-          <i class="fa fa-bars"></i>
-        </a>
-        <ul id="menu-list">
-          <li ng-repeat="item in itemsMenu">
-              <a href="#" class="menu-link" scroll-to="{{item}}" offset="100" ng-click="removeActive(item)">{{item}}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </header>
-  <section id="home" ng-controller="homeCtrl">
-    <div class="welcome">
-      <h1>we make websites</h1>
-      <a scroll-to="portfolio" offset="100" ng-click="activePortfolio()">start tour</a>
-    </div>
-  </section>
+  <my-header></my-header>
+  <our-services></our-services>
 
+<!--
   <section id="services" ng-controller="servicesCtrl">
     <div services="data"></div>
   </section>
@@ -94,11 +92,8 @@
           </div>
         </div>
       </div>
-  </footer>
+  </footer>-->
 
-  <script src="static/js/angular.js"></script>
-  <script src="static/js/angular_route.js"></script>
-  <script src="static/js/angular-smooth-scroll.js"></script>
-  <script src="static/js/main.js"></script>
+
 </body>
 </html>

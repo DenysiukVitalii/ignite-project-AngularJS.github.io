@@ -1,0 +1,21 @@
+<header>
+  <div class="container">
+    <img src="../../static/img/Logo.png" id="logo" alt="">
+    <div id="menu">
+      <a id="icon-menu" ng-click="myHeader.showMenu()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <ul id="menu-list">
+        <li ng-repeat="item in myHeader.model.itemsMenu">
+            <a href="#" class="menu-link">{{item}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<section id="home">
+   <div class="welcome">
+     <h1>we make websites</h1>
+     <a href="#portfolio" du-smooth-scroll du-scrollspy>start tour</a>
+   </div>
+ </section>

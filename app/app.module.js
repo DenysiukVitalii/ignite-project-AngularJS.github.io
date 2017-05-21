@@ -1,8 +1,8 @@
-var app = angular.module("KETapp", ['smoothScroll', 'ngRoute']);
+'use strict';
+angular.module("KETapp", ['myHeader', 'ourServices']);
 
-var width = window.innerWidth;
+/*var width = window.innerWidth;
 var model = {
-  itemsMenu : ['home', 'services', 'portfolio', 'about', 'news', 'contact'],
   workers: [{name: "John Doe", position: "Team Lead", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam excepturi.",
              img: "static/img/worker1.jpg", socialNetworks: [{name: "facebook", link: "https://www.facebook.com/"}, {name: "twitter", link: "https://twitter.com"}, {name: "google", link: "https://plus.google.com/"}, {name: "dribbble", link: "https://dribbble.com/"}]},
             {name: "Carl Graimes", position: "Back-End Developer", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam excepturi.",
@@ -131,55 +131,10 @@ var model = {
                     img: 'static/img/work2.jpg'
                   }]
       },
-      services: [{
-        title: 'Web Design',
-        img: 'static/img/Icon.png',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eaque magni minus, quo sunt cum temporibus inventore neque modi doloribus dolorum ut quae, quisquam necessitatibus nobis, vitae, impedit maxime accusamus.'
-       },
-       {
-        title: 'Graphic Design',
-        img: 'static/img/Icon1.png',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eaque magni minus, quo sunt cum temporibus inventore neque modi doloribus dolorum ut quae, quisquam necessitatibus nobis, vitae, impedit maxime accusamus.'
-       },
-       {
-        title: 'Programming',
-        img: 'static/img/Icon2.png',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eaque magni minus, quo sunt cum temporibus inventore neque modi doloribus dolorum ut quae, quisquam necessitatibus nobis, vitae, impedit maxime accusamus.'
-       },
-       {
-        title: 'Photography',
-        img: 'static/img/Icon3.png',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eaque magni minus, quo sunt cum temporibus inventore neque modi doloribus dolorum ut quae, quisquam necessitatibus nobis, vitae, impedit maxime accusamus.'
-       }]
+
 };
 
-app.controller('headerCtrl', ['$scope', function ($scope) {
-    $scope.itemsMenu = model.itemsMenu;
-    $scope.isClick = false;
 
-    $scope.removeActive = function (link) {
-      var firstLink = document.querySelector("#menu-list li:first-child a");
-      var portfolio = document.querySelector("#menu-list li:nth-child(3) a");
-      if (width > 768) {
-        if (link !== $scope.itemsMenu[0]) {
-          if (!$scope.isClick) {
-            firstLink.classList.add('noborder');
-            $scope.isClick = true;
-          }
-        } else {
-          firstLink.classList.remove('noborder');
-          portfolio.classList.add('noborder');
-          $scope.isClick = false;
-        }
-      }
-    }
-
-    $scope.showMenu = function() {
-      var mobileMenu = document.querySelector("#menu-list");
-      mobileMenu.classList.toggle('show-menu');
-    }
-
-}]);
 
 app.controller('homeCtrl', ['$scope', function ($scope) {
 
@@ -202,7 +157,7 @@ app.controller('aboutCtrl', ['$scope', function ($scope) {
             workers: "=team"
         },
         restrict: "A",
-        templateUrl: 'static/js/templates/team.html'
+        templateUrl: 'app/templates/team.html'
     }
 });
 
@@ -228,7 +183,7 @@ app.controller('formCtrl', function ($scope) {
             scope.min = 20;
         },
         restrict: "A",
-        templateUrl: 'static/js/templates/form.html'
+        templateUrl: 'app/templates/form.html'
     }
 });
 
@@ -246,17 +201,17 @@ app.controller('newsCtrl', ['$scope', function ($scope) {
             articles: "=news"
         },
         restrict: "A",
-        templateUrl: 'static/js/templates/news.html'
+        templateUrl: 'app/templates/news.html'
     }
 });
 
 app.config(function ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'static/js/templates/news.html'
+      templateUrl: 'app/templates/news.html'
     })
     .when('/:id', {
-      templateUrl: 'static/js/templates/article.html',
+      templateUrl: 'app/templates/article.html',
       controller: 'newsDetailController as detail'
     })
     .otherwise({
@@ -279,7 +234,7 @@ app.controller('achievementsCtrl', ['$scope', function ($scope) {
             achievements: "=achievements"
         },
         restrict: "A",
-        templateUrl: 'static/js/templates/achievements.html'
+        templateUrl: 'app/templates/achievements.html'
     }
 });
 
@@ -300,7 +255,7 @@ app.controller('portfolioCtrl', ['$scope', function ($scope) {
             portfolio: "=portfolio"
         },
         restrict: "A",
-        templateUrl: 'static/js/templates/portfolio.html',
+        templateUrl: 'app/templates/portfolio.html',
         link: function (scope, elem, attrs) {
           	scope.selectedItem = 'All';
           	scope.changeCategory = changeCategory;
@@ -332,7 +287,7 @@ app.controller('servicesCtrl', ['$scope', function ($scope) {
             services: "=services"
         },
         restrict: "A",
-        templateUrl: 'static/js/templates/services.html',
+        templateUrl: 'app/templates/services.html',
         link: function (scope, elem, attrs) {
             scope.selectedTab = model.services[0];
             scope.changeService = function(service) {
@@ -340,4 +295,4 @@ app.controller('servicesCtrl', ['$scope', function ($scope) {
             }
         }
     }
-});
+});*/
