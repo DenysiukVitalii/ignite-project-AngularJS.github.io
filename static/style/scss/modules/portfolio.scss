@@ -1,0 +1,131 @@
+#portfolio {
+  padding-bottom: 0;
+  .description {
+    margin-bottom: 20px ;
+  }
+  .filter-menu {
+    @include centerHorizontal();
+    margin-top: 50px;
+    text-align: center;
+
+    @include media(mobile) {
+      position: static;
+      @include translate(0,0);
+    }
+
+    .btn-choose-cat {
+      display: inline-block;
+      color: $black;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      border: 1px solid transparent;
+      margin: 0 5px;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        border-color: $blue;
+        transition: .2s;
+      }
+
+      @include media(mobile) {
+        text-align: center;
+        display: block;
+      }
+    }
+
+    .active-btn {
+      border-color: $blue !important;
+    }
+  }
+
+  #works {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 150px;
+
+    .col-lg-2, .col-md-3, .col-sm-4, .col-xs-6 {
+      padding: 0;
+    }
+
+    .ng-enter {
+      transition: .5s linear all;
+    }
+
+    .ng-enter.ng-enter-active {
+      animation-name: zoomInUp;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+    }
+
+    @include media(mobile) {
+      margin-top: 50px;
+    }
+
+    .work {
+      position: relative;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+      }
+
+      .work-description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        background-color: rgba(127, 240, 255, .8);
+        text-align: center;
+        animation-fill-mode: forwards;
+        animation-name: zoomOut;
+        animation-duration: 0s;
+
+        .wrapper {
+          width: 100%;
+          margin: 0;
+          @include centerVertical();
+          top: 47%;
+          color: #fff;
+
+          .work-title {
+            font-size: 1.7em;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+
+          .work-category {
+            margin: 0;
+            font-weight: bold;
+          }
+        }
+      }
+
+    }
+
+    .mouse-over {
+      .work-description {
+        animation-name: zoomIn;
+        animation-duration: .4s;
+
+        .work-title {
+          animation-name: zoomIn;
+          animation-duration: .5s;
+        }
+      }
+    }
+
+    .mouse-out {
+      .work-description {
+        animation-name: zoomOut;
+        animation-duration: .4s;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.link-active {
+  @include border(bb, 2px, $blue);
+  color: $blue !important;
+}
+.noborder {
+  border: none !important;
+  color: #000 !important;
+}

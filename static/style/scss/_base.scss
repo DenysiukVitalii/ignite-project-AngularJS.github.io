@@ -1,0 +1,35 @@
+* {
+  font-family: RalewayLight;
+}
+
+
+body {
+  margin-top: 100px;
+  @include media(mobile) {
+    margin-top: 100px;
+  }
+}
+
+.template-section {
+  padding: 60px 0;
+  h1 {
+    font-family: RalewayRegular;
+    margin: 0;
+  }
+  img.divider {
+    margin: 25px 0;
+  }
+  p.description {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 90px;
+    @include media(mobile) {
+      width: 100%;
+    }
+  }
+}
+
+.sec {
+  height: 100vh;
+  width: 100%;
+}
