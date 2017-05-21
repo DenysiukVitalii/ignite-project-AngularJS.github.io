@@ -1,0 +1,32 @@
+<section id="contact-us" class="template-section">
+	<div class="container text-center">
+    <h1>Contact us</h1>
+    <img src="../../static/img/Separator.png" class="divider" alt="">
+    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium voluptates minima illo dolorum officiis id voluptate quidem repudiandae dolores aliquam eius perspiciatis, tenetur quaerat debitis vero veniam, libero, delectus velit.</p>
+		<form class="form-container" novalidate name="myForm" ng-submit="contactUs.submit()">
+			<div ng-repeat="field in contactUs.model.formFields" ng-class="field.size">
+			    <div class="form-group">
+				    <input ng-if="field.type != 'textarea'"
+				           type="{{field.type}}"
+  				    	   class="form-control"
+  				    	   ng-model="contactUs[field.name]"
+  				    	   ng-pattern="field.pattern"
+  				    	   placeholder="{{field.placeholder}}"
+  				    	   required>
+				    <textarea ng-if="field.type == 'textarea'"
+				              rows="1"
+			    			      ng-model="contactUs[field.name]"
+			    	          ng-minlength="{{field.minlength}}"
+			    	          placeholder="{{field.placeholder}}"
+			    	          required>
+					</textarea>
+				    <div class="border"></div>
+				    <div class="error-tooltip">{{field.tooltip}}</div>
+			    </div>
+			</div>
+			<div class="form-group col-xs-12 submit-wrapper">
+				<button type="submit" class="btn" ng-disabled="myForm.$invalid">Send Message</button>
+			</div>
+		</form>
+	</div>
+</section>
