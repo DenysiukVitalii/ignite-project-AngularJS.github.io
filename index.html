@@ -12,6 +12,9 @@
   <script src="libs/angular_route.js"></script>
   <script src="libs/angular-smooth-scroll.js"></script>
   <script src="libs/angular-animate.js"></script>
+  <script src="libs/angular-scroll-spy.js"></script>
+  <script src="libs/countUp.js"></script>
+  <script src="libs/angular-countUp.js"></script>
 
   <script src="app/app.module.js"></script>
   <script src="app/header/header.model.js"></script>
@@ -27,22 +30,22 @@
   <script src="app/portfolio/portfolio.module.js"></script>
   <script src="app/portfolio/portfolio.component.js"></script>
 
+  <script src="app/achievements/achievements.model.js"></script>
+  <script src="app/achievements/achievements.module.js"></script>
+  <script src="app/achievements/achievements.component.js"></script>
+
+  <script src="app/about/about.model.js"></script>
+  <script src="app/about/about.module.js"></script>
+  <script src="app/about/about.component.js"></script>
+
 </head>
 <body>
   <my-header></my-header>
   <our-services></our-services>
   <portfolio></portfolio>
+  <achievements></achievements>
+  <about></about>
 <!--
-
-  <section id="portfolio" class="template-section" ng-controller="portfolioCtrl">
-    <div portfolio="data"></div>
-  </section>
-
-  <section id="achievements" class="template-section" ng-controller="achievementsCtrl">
-    <div class="container text-center">
-      <div achievements="data"></div>
-    </div>
-  </section>
 
   <section id="about" class="template-section" ng-controller="aboutCtrl">
     <div class="container text-center">

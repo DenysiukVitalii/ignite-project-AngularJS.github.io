@@ -1,0 +1,16 @@
+<section id="achievements" class="template-section">
+	<div class="container text-center">
+		<div class="col-sm-3 achievement" ng-repeat="achievement in achievements.model.arrayOfAchievements">
+			<img ng-src="{{achievement.img}}">
+			<p class="number"
+			   count-up
+			   id="animation-1"
+			   start-val="0"
+			   end-val="+achievement.number"
+			   duration="3"
+			   scroll-spy-event="elementScrolledIntoView"
+			   scroll-spy></p>
+			<p class="title">{{achievement.title}}</p>
+		</div>
+	</div>
+</section>
