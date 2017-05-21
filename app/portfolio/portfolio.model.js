@@ -19,61 +19,61 @@ var portfolioModel =  {
     works: [{
                 category: 'Graphic Design',
                 title: 'Sample image',
-                img: '../../static/img/work1.jpg'
+                img: 'static/img/work1.jpg'
               },
               {
                 category: 'Illustration',
                 title: 'Sample image',
-                img: '../../static/img/work2.jpg'
+                img: 'static/img/work2.jpg'
               },
               {
                 category: 'Web Design',
                 title: 'Sample image',
-                img: '../../static/img/work3.jpg'
+                img: 'static/img/work3.jpg'
               },
               {
                 category: 'Graphic Design',
                 title: 'Sample image',
-                img: '../../static/img/work1.jpg'
+                img: 'static/img/work1.jpg'
               },
               { category: 'Photography',
                 title: 'Sample image',
-                img: '../../static/img/work4.jpg'
+                img: 'static/img/work4.jpg'
               },
               {
                 category: 'Web Design',
                 title: 'Sample image',
-                img: '../../static/img/work3.jpg'
+                img: 'static/img/work3.jpg'
               },
               {
                 category: 'Photography',
                 title: 'Sample image',
-                img: '../../static/img/work4.jpg'
+                img: 'static/img/work4.jpg'
               },
               {
                 category: 'Web Design',
                 title: 'Sample image',
-                img: '../../static/img/work3.jpg'
+                img: 'static/img/work3.jpg'
               },
               {
                 category: 'Graphic Design',
                 title: 'Sample image',
-                img: '../../static/img/work1.jpg'
+                img: 'static/img/work1.jpg'
               },
               {
                 category: 'Illustration',
                 title: 'Sample image',
-                img: '../../static/img/work2.jpg'
+                img: 'static/img/work2.jpg'
               },
               {
                 category: 'Photography',
                 title: 'Sample image',
-                img: '../../static/img/work4.jpg'
+                img: 'static/img/work4.jpg'
               },
               {
                 category: 'Illustration',
                 title: 'Sample image',
-                img: '../../static/img/work2.jpg'
+                img: 'static/img/work2.jpg'
               }]
 
 }
