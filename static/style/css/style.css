@@ -535,7 +535,7 @@ footer .footer-bottom {
           text-align: center;
           display: block; } }
     #portfolio .filter-menu .active-btn {
-      border-color: #7FF0FF; }
+      border-color: #7FF0FF !important; }
   #portfolio #works {
     margin: 0;
     padding: 0;

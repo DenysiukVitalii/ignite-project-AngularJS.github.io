@@ -8,9 +8,10 @@
   <link href="libs/bootstrap.css" rel="stylesheet"/>
   <link rel="stylesheet" href="static/style/font-awesome.min.css">
   <link rel="stylesheet" href="static/style/css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="libs/angular_route.js"></script>
   <script src="libs/angular-smooth-scroll.js"></script>
+  <script src="libs/angular-animate.js"></script>
 
   <script src="app/app.module.js"></script>
   <script src="app/header/header.model.js"></script>
@@ -22,17 +23,16 @@
   <script src="app/ourservices/ourservices.module.js"></script>
   <script src="app/ourservices/ourservices.component.js"></script>
 
-
+  <script src="app/portfolio/portfolio.model.js"></script>
+  <script src="app/portfolio/portfolio.module.js"></script>
+  <script src="app/portfolio/portfolio.component.js"></script>
 
 </head>
 <body>
   <my-header></my-header>
   <our-services></our-services>
-
+  <portfolio></portfolio>
 <!--
-  <section id="services" ng-controller="servicesCtrl">
-    <div services="data"></div>
-  </section>
 
   <section id="portfolio" class="template-section" ng-controller="portfolioCtrl">
     <div portfolio="data"></div>

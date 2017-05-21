@@ -1,5 +1,5 @@
 'use strict';
-angular.module("KETapp", ['myHeader', 'ourServices']);
+angular.module("KETapp", ['myHeader', 'ourServices', 'portfolio']);
 
 /*var width = window.innerWidth;
 var model = {
@@ -55,98 +55,9 @@ var model = {
            }
          ],
 
-      portfolio: {
-        categories: [{
-                      title: 'All'
-                     },
-                     {
-                      title: 'Web Design'
-                     },
-                     {
-                      title: 'Graphic Design'
-                     },
-                     {
-                      title: 'Photography'
-                     },
-                     {
-                      title: 'Illustration'
-                     }],
-        works: [{
-                    category: 'Graphic Design',
-                    title: 'Sample image',
-                    img: 'static/img/work1.jpg'
-                  },
-                  {
-                    category: 'Illustration',
-                    title: 'Sample image',
-                    img: 'static/img/work2.jpg'
-                  },
-                  {
-                    category: 'Web Design',
-                    title: 'Sample image',
-                    img: 'static/img/work3.jpg'
-                  },
-                  {
-                    category: 'Graphic Design',
-                    title: 'Sample image',
-                    img: 'static/img/work1.jpg'
-                  },
-                  { category: 'Photography',
-                    title: 'Sample image',
-                    img: 'static/img/work4.jpg'
-                  },
-                  {
-                    category: 'Web Design',
-                    title: 'Sample image',
-                    img: 'static/img/work3.jpg'
-                  },
-                  {
-                    category: 'Photography',
-                    title: 'Sample image',
-                    img: 'static/img/work4.jpg'
-                  },
-                  {
-                    category: 'Web Design',
-                    title: 'Sample image',
-                    img: 'static/img/work3.jpg'
-                  },
-                  {
-                    category: 'Graphic Design',
-                    title: 'Sample image',
-                    img: 'static/img/work1.jpg'
-                  },
-                  {
-                    category: 'Illustration',
-                    title: 'Sample image',
-                    img: 'static/img/work2.jpg'
-                  },
-                  {
-                    category: 'Photography',
-                    title: 'Sample image',
-                    img: 'static/img/work4.jpg'
-                  },
-                  {
-                    category: 'Illustration',
-                    title: 'Sample image',
-                    img: 'static/img/work2.jpg'
-                  }]
-      },
+
 
 };
-
-
-
-app.controller('homeCtrl', ['$scope', function ($scope) {
-
-    $scope.activePortfolio = function () {
-      var firstLink = document.querySelector("#menu-list li:first-child a");
-      var portfolio = document.querySelector("#menu-list li:nth-child(3) a");
-      firstLink.classList.add('noborder');
-      portfolio.classList.add('link-active');
-      portfolio.classList.remove('noborder');
-    }
-
-}]);
 
 app.controller('aboutCtrl', ['$scope', function ($scope) {
   $scope.data = model.workers;
@@ -238,61 +149,4 @@ app.controller('achievementsCtrl', ['$scope', function ($scope) {
     }
 });
 
-var currentCategory = 'All';
-app.controller('portfolioCtrl', ['$scope', function ($scope) {
-  $scope.data = model.portfolio;
-}])
-.filter('category', function() {
-  return function (arr) {
-   return arr.filter(function(work) {
-     return work.category === currentCategory || currentCategory === 'All';
-   });
- }
-})
-.directive('portfolio', function () {
-    return {
-        scope: {
-            portfolio: "=portfolio"
-        },
-        restrict: "A",
-        templateUrl: 'app/templates/portfolio.html',
-        link: function (scope, elem, attrs) {
-          	scope.selectedItem = 'All';
-          	scope.changeCategory = changeCategory;
-          	scope.enterWork = enterWork;
-          	scope.leaveWork = leaveWork;
-
-          	function changeCategory(category) {
-          		currentCategory = category;
-          		scope.selectedItem = category;
-          	};
-
-          	function enterWork(work) {
-          		scope.currentOverWork = work;
-          	}
-
-          	function leaveWork(work) {
-          		scope.currentOutWork = work;
-          	}
-        }
-    }
-});
-
-app.controller('servicesCtrl', ['$scope', function ($scope) {
-  $scope.data = model.services;
-}])
-.directive('services', function () {
-    return {
-        scope: {
-            services: "=services"
-        },
-        restrict: "A",
-        templateUrl: 'app/templates/services.html',
-        link: function (scope, elem, attrs) {
-            scope.selectedTab = model.services[0];
-            scope.changeService = function(service) {
-              scope.selectedTab = service;
-            }
-        }
-    }
-});*/
+*/
